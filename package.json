@@ -4,7 +4,11 @@
   "description": "API template",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint \"**/*.js\"",
+    "lint-fix": "eslint \"**/*.js\" --fix" 
   },
   "keywords": [],
   "author": "Luis Contreras Guerra <luisguerra495@gmail.com>",
@@ -16,6 +20,8 @@
   },
   "devDependencies": {
     "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "nodemon": "^2.0.6"
   }
 }
