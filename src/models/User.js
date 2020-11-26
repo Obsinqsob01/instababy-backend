@@ -5,6 +5,10 @@ const UserSchema = Schema({
     type: String,
     required: true,
   },
+  profile_img: {
+    type: String,
+    default: 'http://lorempixel.com/400/200',
+  },
   last_name: {
     type: String,
     required: true,
@@ -18,6 +22,9 @@ const UserSchema = Schema({
     type: String,
     required: true,
   },
+  followers: [{ type: Schema.Types.ObjectId, ref: 'users' }],
+  following: [{ type: Schema.Types.ObjectId, ref: 'users' }],
+  posts: [{ type: Schema.Types.ObjectId, ref: 'posts' }],
 }, {
   timestamps: true,
 });
