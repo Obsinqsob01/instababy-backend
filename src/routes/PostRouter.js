@@ -13,6 +13,18 @@ router.patch(
   PostValidator.createComment,
   PostController.createComment
 );
+router.patch(
+  "/posts/:postId/like",
+  verifyToken,
+  PostValidator.like,
+  PostController.like
+);
+router.patch(
+  "/posts/:postId/dislike",
+  verifyToken,
+  PostValidator.like,
+  PostController.dislike
+);
 router.delete(
   "/posts/:id/comment",
   PostValidator.removeComment,
