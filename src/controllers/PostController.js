@@ -49,4 +49,36 @@ module.exports = {
       });
     }
   },
+  like: async (req, res) => {
+    try {
+      const { postId } = req.params;
+      const { id } = req.decoded;
+
+      const like = await PostService.like(postId, id);
+
+      res.status(200).send({
+        payload: like,
+      });
+    } catch (e) {
+      res.status(400).send({
+        error: e.message,
+      });
+    }
+  },
+  dislike: async (req, res) => {
+    try {
+      const { postId } = req.params;
+      const { id } = req.decoded;
+
+      const like = await PostService.dislike(postId, id);
+
+      res.status(200).send({
+        payload: like,
+      });
+    } catch (e) {
+      res.status(400).send({
+        error: e.message,
+      });
+    }
+  },
 };
