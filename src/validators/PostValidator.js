@@ -23,4 +23,9 @@ module.exports = {
       comment_id: Joi.string().required(),
     }),
   }),
+  like: celebrate({
+    [Segments.PARAMS]: Joi.object().keys({
+      postId: Joi.string().required(),
+    }),
+  }),
 };
